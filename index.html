@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Brennan’s Guide to NYC 🗽</title>
+  <meta name="description" content="An accessible tribute to New York City and Brennan Lee Mulligan — complete with quotes, magic, and lore.">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html">
+      <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brennan-quotes.html">Brennan Quotes</a></li>
+        <li><a href="find-brennan.html">Find Brennan</a></li>
+        <li><a href="old-haunts.html">Old Haunts</a></li>
+        <li><a href="to-eat.html">To Eat</a></li>
+        <li><a href="to-see-and-do.html">To See & Do</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrapper">
+    <h1 class="center-text">🗽 Why This Site Exists</h1>
+
+    <section class="about-box" aria-labelledby="site-purpose">
+      <p class="center-text"><em>This site is a love letter.</em></p>
+
+      <p id="site-purpose">
+        A love letter to both New York City—its chaos, its poetry, its subway prophets and sidewalk saints—and to Brennan Lee Mulligan—Dungeon Master, comedian, storyteller, bird enthusiast, and profoundly decent human being—who has spent years weaving that city’s spirit into every tale he tells.
+      </p>
+
+      <p>
+        Across campaigns, interviews, podcasts, and passing quips about municipal juggling, Brennan has become a bard of the boroughs—a mythmaker who understands that NYC is more than a skyline. It’s a character, a crucible, a spell in progress. A place where every bodega sandwich is a side quest, every subway line a leyline, and every pigeon might be a wizard, a ghost, or just an asshole with wings.
+      </p>
+
+      <p>
+        This guide was born out of love and logistics.<br />
+        We wanted to gather every Brennanism, every quote and hidden gem, into one place—to make it easier to see New York through his eyes: with reverence, humor, and bone-deep affection.
+      </p>
+
+      <p>
+        Part of what makes Brennan’s stories feel so truthful is that he doesn’t just craft villains with swords and horns. He conjures antagonists made of systems, scarcity, and unchecked power. Whether it’s a shadowy developer evicting magical tenants or a highway hex draining a city’s soul, Brennan has a way of turning capitalism itself into the final boss—somehow without ever losing sight of the humanity trapped inside it. He reminds us that resistance can be mythic, that empathy is radical, and that fighting for community is the most heroic quest of all.<br />
+        That feeling is the very soul of NYC.
+      </p>
+
+      <blockquote>
+        <p>This city is brutal. And beautiful. And funny. And haunted. And holy.  
+        And it forces you to confront your shared humanity in ways you didn’t even know you were avoiding.</p>
+      </blockquote>
+
+      <p>
+        If you’ve ever cried in a deli at 2 a.m., felt safe among strangers, or caught a glimpse of something divine between train delays, then this city already knows your name. Brennan just gave you the map.
+      </p>
+
+      <p>
+        So, whether you’re planning a trip, chasing down lore, or just want to feel a little less alone in the world:  
+        <strong><em>Welcome. You belong here.</em></strong>
+      </p>
+
+      <p class="center-text"><strong>Sincerely,</strong></p>
+      <p class="center-text"><strong>Another Intrepid Hero</strong></p>
+    </section>
+  </main>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('nav-list');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('open');
+    });
+
+    const links = document.querySelectorAll('.nav-list a');
+    const currentUrl = window.location.href;
+    links.forEach(link => {
+      if (currentUrl.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

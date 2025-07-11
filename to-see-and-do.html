@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To See & Do | Brennan’s Guide to NYC</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html">
+      <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="brennan-quotes.html">Brennan Quotes</a></li>
+        <li><a href="find-brennan.html">Find Brennan</a></li>
+        <li><a href="old-haunts.html">Old Haunts</a></li>
+        <li><a href="to-eat.html">To Eat</a></li>
+        <li><a href="to-see-and-do.html">To See & Do</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="wrapper">
+    <h1>To See & Do</h1>
+    <p>Want to walk the ley lines or find a little magic between subway stops? This is your to-do list for experiencing Brennan's NYC.</p>
+  </main>
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navList = document.getElementById('nav-list');
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('open');
+    });
+    const links = document.querySelectorAll('.nav-list a');
+    const currentUrl = window.location.href;
+    links.forEach(link => {
+      if (currentUrl.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
