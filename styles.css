@@ -66,9 +66,10 @@ body {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
+/* === Feedback Form Styles === */
 .feedback-form-section {
   margin: 2rem auto;
-  max-width: 600px;
+  max-width: 700px;
   text-align: left;
   padding: 0 1rem;
 }
@@ -109,8 +110,6 @@ body {
 
 .form-card button:hover {
   background-color: #8d6d6e;
-}
-background-color: #8d6d6e;
 }
 
 
