@@ -1,3 +1,4 @@
+/* === Base Styles === */
 body {
   font-family: Arial, sans-serif;
   background-color: #E5E1E2;
@@ -49,28 +50,13 @@ body {
 }
 
 .wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: auto;
   padding: 1rem;
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
-    display: none;
-  }
-
-  .nav-list.open {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-    margin-top: 0.5rem;
-  }
-} /* ←←← THIS was missing! 👈 👈 👈 */
-
+/* === Page Banner === */
 .page-banner {
   width: 100%;
   max-height: 400px;
@@ -79,9 +65,17 @@ body {
   margin-bottom: 1rem;
 }
 
-/* === Feedback Form Styles === */
+/* === Feedback Form Layout === */
+.form-and-aside {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
 .feedback-form-section {
-  margin: 2rem auto;
+  flex: 1 1 400px;
   max-width: 700px;
   text-align: left;
   padding: 0 1rem;
@@ -107,3 +101,108 @@ body {
   padding: 0.75rem;
   border: 1px solid #ccc;
   border-radius: 6px;
+  font-size: 1rem;
+}
+
+.form-card button {
+  padding: 0.75rem;
+  background-color: #5c6a9a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-card button:hover {
+  background-color: #8d6d6e;
+}
+
+/* === Sidebar: Find Brennan Online === */
+.brennan-links {
+  flex: 1 1 250px;
+  background-color: #ffffff;
+  border-left: 4px solid #5c6a9a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+  text-align: left;
+}
+
+.brennan-links h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  color: #5c6a9a;
+}
+
+.brennan-links ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brennan-links li {
+  margin-bottom: 0.75rem;
+}
+
+/* === Animated Hover Effects for Links === */
+.brennan-links a {
+  color: #23171f;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.brennan-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: #5c6a9a;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.brennan-links a:hover,
+.brennan-links a:focus {
+  color: #5c6a9a;
+  transform: translateY(-2px);
+}
+
+.brennan-links a:hover::after,
+.brennan-links a:focus::after {
+  transform: scaleX(1);
+}
+
+/* === Responsive Navigation + Layout === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .form-and-aside {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    padding: 0.5rem;
+  }
+}
+
