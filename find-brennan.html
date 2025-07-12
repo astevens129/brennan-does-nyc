@@ -63,10 +63,23 @@
     </div>
   </main>
 
-  <script>
+    <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.
+      toggle.setAttribute('aria-expanded', !expanded);
+      navList.classList.toggle('open');
+    });
+
+    const links = document.querySelectorAll('.nav-list a');
+    const currentUrl = window.location.href;
+    links.forEach(link => {
+      if (currentUrl.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
 
