@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To See & Do | The Brennan Inspired Guide To NYC</title>
+  <meta name="description" content="Walk the ley lines of NYC with Brennan Lee Mulligan's magical guide. From subway quests to jazz bars, start your journey here." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -19,40 +20,48 @@
         <li><a href="find-brennan.html">Find Brennan</a></li>
         <li><a href="old-haunts.html">Old Haunts</a></li>
         <li><a href="to-eat.html">To Eat</a></li>
-        <li><a href="to-see-and-do.html">To See & Do</a></li>
+        <li><a href="to-see-and-do.html" class="active">To See & Do</a></li>
       </ul>
     </nav>
   </header>
+
   <main class="wrapper">
- <img src="images/brennan-to-do.png.png" alt="Brennan Lee Mulligan Timeout Article Photo Rolling Dice">
- 
-    <h1>To See & Do</h1>
+    <h1>🗺️ To See & Do</h1>
+
+    <img src="images/brennan-to-do-img.svg" alt="Brennan Lee Mulligan holding dice over NYC with magical energy and skyline" class="page-banner" />
+
     <p>Want to walk the ley lines or find a little magic between subway stops? This is your to-do list for experiencing Brennan's NYC.</p>
-    <p>
-      <ul>
-        <li> First things first: Brennan tells us to, you <em>MUST</em> ride the <a href="https://www.mta.info/fares-tolls" target="_blank">subway</a> in order to
-            <blockquote> "Confront your shared humanit."</blockquote>
-        
-          <ol><p>You have a few options:</p>
-          <li>The digital tap and go option (which will cap your weekly fare at $34 per 7 day period-just ensure you use the same card for all of your trips) You may purchase an OMNY card if you don't have another tap card or don't have a digital wallet.</li>
-          <li>Purchase a MetroCard where you can buy a 7 or 30 day unlimited pass with the option to add Express Buses or opt to pay $2.90 per ride.</li> 
-          <li>Buy an individual ride ticket for $3.25 per trip.</li>
-          </ol>
-        </li>
-            <br>
-          <li><p>Visit the <a href="https://www.cellardog.net/" target="_blank"> Cellar Dog</a>(Formerly Fat Cat) 75 Christopher St
-          offers:
-          <ul>
-          <li>Live Jazz</li>
-          <li>Shuffleboard</li>
-          <li>Billards</li>
-          <li>Ping-Pong</li>
-          <li>Arcade Games & More</li></p>
-        </ul>
-        </li>
+
+    <section>
+      <h2>1. Ride the Subway</h2>
+      <p>
+        Brennan insists: if you want the real NYC experience, you <em>must</em> ride the <a href="https://www.mta.info/fares-tolls" target="_blank">subway</a> to:
+      </p>
+      <blockquote>“Confront your shared humanity.”</blockquote>
+
+      <p>You’ve got a few options for fare payment:</p>
+      <ol class="styled-list">
+        <li>Use a tap-to-pay card or digital wallet (OMNY) — weekly fares cap at $34 if you use the same card/device.</li>
+        <li>Buy a MetroCard — get unlimited 7-day or 30-day passes (can include Express Buses).</li>
+        <li>Purchase a single ride ticket — $3.25 per trip.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>2. Visit the Cellar Dog</h2>
+      <p>
+        Formerly Fat Cat, the <a href="https://www.cellardog.net/" target="_blank">Cellar Dog</a> (75 Christopher St) is a Brennan-endorsed gem that offers:
+      </p>
+      <ul class="styled-list">
+        <li>Live Jazz</li>
+        <li>Shuffleboard</li>
+        <li>Billiards</li>
+        <li>Ping-Pong</li>
+        <li>Arcade Games & more</li>
       </ul>
-    </p>
+    </section>
   </main>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -61,6 +70,7 @@
       toggle.setAttribute('aria-expanded', !expanded);
       navList.classList.toggle('open');
     });
+
     const links = document.querySelectorAll('.nav-list a');
     const currentUrl = window.location.href;
     links.forEach(link => {
