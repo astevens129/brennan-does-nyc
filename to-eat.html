@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>To Eat | A Brennan Inspired Guide To NYC</title>
+  <meta name="description" content="Explore Brennan Lee Mulligan-approved food spots across NYC. From heavy eats to affordable gems, this list leaves no meal behind." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -18,17 +19,21 @@
         <li><a href="brennan-quotes.html">Brennan Quotes</a></li>
         <li><a href="find-brennan.html">Find Brennan</a></li>
         <li><a href="old-haunts.html">Old Haunts</a></li>
-        <li><a href="to-eat.html">To Eat</a></li>
+        <li><a href="to-eat.html" class="active">To Eat</a></li>
         <li><a href="to-see-and-do.html">To See & Do</a></li>
       </ul>
     </nav>
   </header>
+
   <main class="wrapper">
-    <h1>To Eat</h1>
-    <img src="images/brennan-to-eat-img.png alt="Brennan Lee Mulligan as a giant playfully holding a bus over New York City with a rainbow in the sky" class="page-banner" />
-    
-    <p>This is your Brennan-approved culinary quest list: Heavy food, Affordable Food. No meal left behind.</p>
+    <h1>🍕 To Eat</h1>
+    <img src="images/brennan-to-eat-img.png" alt="Brennan Lee Mulligan as a giant playfully holding a bus over New York City with a rainbow in the sky" class="page-banner" />
+
+    <p>This is your Brennan-approved culinary quest list: Heavy food. Affordable food. No meal left behind.</p>
+
+    <!-- You can add your list of food spots here later -->
   </main>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -37,6 +42,7 @@
       toggle.setAttribute('aria-expanded', !expanded);
       navList.classList.toggle('open');
     });
+
     const links = document.querySelectorAll('.nav-list a');
     const currentUrl = window.location.href;
     links.forEach(link => {
@@ -47,3 +53,4 @@
   </script>
 </body>
 </html>
+
