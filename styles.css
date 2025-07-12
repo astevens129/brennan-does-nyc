@@ -1,3 +1,8 @@
+/* === Global Reset and Box Sizing === */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 /* === Base Styles === */
 body {
   font-family: Arial, sans-serif;
@@ -36,6 +41,7 @@ body {
   background: #FFFFFF;
   padding: 0.5rem 1rem;
   border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .nav-list a:hover,
@@ -43,6 +49,11 @@ body {
 .nav-list a.active {
   background: #5C6A9A;
   color: white;
+}
+
+.nav-list a:focus-visible {
+  outline: 3px dashed #5c6a9a;
+  outline-offset: 4px;
 }
 
 .nav-toggle {
@@ -102,6 +113,13 @@ body {
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #5c6a9a;
+  outline: none;
 }
 
 .form-card button {
@@ -147,7 +165,6 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* === Animated Hover Effects for Links === */
 .brennan-links a {
   color: #23171f;
   text-decoration: none;
@@ -181,6 +198,14 @@ body {
   transform: scaleX(1);
 }
 
+/* === List Styling === */
+.styled-list {
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
 /* === Responsive Navigation + Layout === */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -204,18 +229,7 @@ body {
   .wrapper {
     padding: 0.5rem;
   }
-  
-.page-banner {
-  width: 100%;
-  max-height: 400px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
 }
-.styled-list {
-  margin-left: 1.5rem;
-  padding-left: 1rem;
-  line-height: 1.6;
-}
+
 
 
