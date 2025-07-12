@@ -25,6 +25,22 @@
   </header>
   <main class="wrapper">
     <h1>Find Brennan</h1>
+    <section aria-labelledby="feedback-title" class="feedback-form-section">
+  <h2 id="feedback-title">📬 Share Your Brennan Sightings or Thoughts</h2>
+  <form action="https://formspree.io/f/xovwggoj" method="POST">
+    <label for="name">Your Name (optional)</label>
+    <input type="text" id="name" name="name" placeholder="Legendary hero name">
+
+    <label for="email">Your Email <span aria-hidden="true">*</span></label>
+    <input type="email" id="email" name="email" required aria-required="true" placeholder="you@nycquest.net">
+
+    <label for="message">Where did you spot Brennan or what would you like to share? <span aria-hidden="true">*</span></label>
+    <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
     <p>Use this page to discover Brennan's favorite neighborhoods, filming locations, and legendary hangouts—both real and rumored.</p>
   </main>
   <script>
