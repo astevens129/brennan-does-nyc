@@ -66,19 +66,29 @@ body {
   border-radius: 10px;
   margin-bottom: 1rem;
 }
-  .feedback-form-section {
-  margin-top: 2rem;
+.feedback-form-section {
+  margin: 2rem auto;
+  max-width: 600px;
   text-align: left;
+  padding: 0 1rem;
 }
 
-.feedback-form-section form {
+.form-card {
+  background-color: #ffffff;
+  border: 2px solid #5c6a9a;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-card form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.feedback-form-section input,
-.feedback-form-section textarea {
+.form-card input,
+.form-card textarea {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ccc;
@@ -86,7 +96,7 @@ body {
   font-size: 1rem;
 }
 
-.feedback-form-section button {
+.form-card button {
   padding: 0.75rem;
   background-color: #5c6a9a;
   color: white;
@@ -94,10 +104,13 @@ body {
   border-radius: 6px;
   font-size: 1rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.feedback-form-section button:hover {
+.form-card button:hover {
   background-color: #8d6d6e;
+}
+background-color: #8d6d6e;
 }
 
 
