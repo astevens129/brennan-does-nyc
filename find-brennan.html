@@ -29,33 +29,38 @@
     <h1>Where In The World is BLeeM?</h1>
     <p>Use this page to discover Brennan's favorite neighborhoods, filming locations, and legendary hangouts—both real and rumored.</p>
 
-    <section aria-labelledby="feedback-title" class="feedback-form-section">
-      <h2 id="feedback-title">📬 Share Your Brennan Sightings or Thoughts</h2>
-      <div class="form-card">
-        <form action="https://formspree.io/f/xovwggoj" method="POST" novalidate>
-          <label for="name">Your Name (optional)</label>
-          <input type="text" id="name" name="name" placeholder="Legendary hero name" />
+    <div class="form-and-aside">
+      <section aria-labelledby="feedback-title" class="feedback-form-section">
+        <h2 id="feedback-title">📬 Share Your Brennan Sightings or Thoughts</h2>
+        <div class="form-card">
+          <form action="https://formspree.io/f/xovwggoj" method="POST" novalidate>
+            <label for="name">Your Name (optional)</label>
+            <input type="text" id="name" name="name" placeholder="Legendary hero name" />
 
-          <label for="email">Your Email <span aria-hidden="true" role="presentation">*</span></label>
-          <input type="email" id="email" name="email" required aria-required="true" placeholder="you@nycquest.net" />
+            <label for="email">Your Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required aria-required="true" placeholder="you@nycquest.net" />
 
-          <label for="message">Where did you spot Brennan or what would you like to share? <span aria-hidden="true" role="presentation">*</span></label>
-          <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
+            <label for="message">Where did you spot Brennan or what would you like to share? <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
 
-          <button type="submit">Send Message</button>
-        </form>
-      </div>
-    </section>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </section>
 
-    <aside class="brennan-links" aria-labelledby="find-brennan-online">
-      <h2 id="find-brennan-online">🔎 Find Brennan Online</h2>
-      <ul>
-        <li><a href="https://www.instagram.com/brennanlm/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://twitter.com/BrennanLM" target="_blank" rel="noopener">Twitter (X)</a></li>
-        <li><a href="https://www.youtube.com/@dimension20show" target="_blank" rel="noopener">YouTube (Dimension 20)</a></li>
-        <li><a href="https://www.dropout.tv/" target="_blank" rel="noopener">Dropout.tv</a></li>
-      </ul>
-    </aside>
+      <aside class="brennan-links" aria-labelledby="find-brennan-online">
+        <h2 id="find-brennan-online">🔎 Find Brennan Online</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/brennanleemulligan/" target="_blank" rel="noopener">Brennan’s Instagram</a></li>
+          <li><a href="https://www.instagram.com/dimension20show/" target="_blank" rel="noopener">Dimension 20 Instagram</a></li>
+          <li><a href="https://www.instagram.com/worldsbeyondnumber/" target="_blank" rel="noopener">Worlds Beyond Number Instagram</a></li>
+          <li><a href="https://www.youtube.com/@dimension20show" target="_blank" rel="noopener">Dimension 20 YouTube</a></li>
+          <li><a href="https://www.youtube.com/@worldsbeyondnumber" target="_blank" rel="noopener">Worlds Beyond Number YouTube</a></li>
+          <li><a href="https://www.dropout.tv/" target="_blank" rel="noopener">Dropout.tv</a></li>
+          <li><a href="https://www.patreon.com/worldsbeyondnumber" target="_blank" rel="noopener">Worlds Beyond Number Patreon</a></li>
+        </ul>
+      </aside>
+    </div>
   </main>
 
   <script>
@@ -63,17 +68,5 @@
     const navList = document.getElementById('nav-list');
     toggle.addEventListener('click', () => {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      navList.classList.toggle('open');
-    });
+      toggle.
 
-    const links = document.querySelectorAll('.nav-list a');
-    const currentUrl = window.location.href;
-    links.forEach(link => {
-      if (currentUrl.includes(link.getAttribute('href'))) {
-        link.classList.add('active');
-      }
-    });
-  </script>
-</body>
-</html>
