@@ -1,3 +1,4 @@
+
 /* === Global Reset and Box Sizing === */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -272,7 +273,7 @@ body {
   color: var(--accent);
 }
 
-/* === Responsive Navigation + Layout === */
+/* === Responsive Layout === */
 @media (max-width: 768px) {
   .nav-toggle {
     display: block;
@@ -296,6 +297,3 @@ body {
     padding: 0.5rem;
   }
 }
-
-
-
