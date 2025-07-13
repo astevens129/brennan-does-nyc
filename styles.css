@@ -372,6 +372,31 @@ tr:nth-child(even) {
   table td:last-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-  }
+  }.site-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-top: 2px solid var(--accent);
+  margin-top: 3rem;
+}
+
+.site-footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.site-footer .social-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.site-footer .social-icons img:hover,
+.site-footer .social-icons img:focus {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
