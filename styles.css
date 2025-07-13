@@ -161,6 +161,48 @@ ol.styled-list li::before,
   padding: 0.2rem 0.3rem;
   border-radius: 4px;
 }
+/* === Collapsible Ordered List Styling === */
+.collapsible-ol {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.collapsible-ol li {
+  margin-bottom: 1.5rem;
+  padding-left: 0;
+  position: relative;
+}
+
+.collapsible-toggle {
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: block;
+}
+
+.collapsible-toggle:hover,
+.collapsible-toggle:focus {
+  background-color: var(--hover-accent);
+  outline: none;
+}
+
+.collapsible-content {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--accent);
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
 
 /* === Quote Sections === */
 .quote-section {
