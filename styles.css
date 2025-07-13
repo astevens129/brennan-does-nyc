@@ -362,8 +362,10 @@ tr:nth-child(even) {
 .footer-icons {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
 .footer-icons img {
@@ -373,8 +375,8 @@ tr:nth-child(even) {
   filter: grayscale(100%) brightness(0.8);
 }
 
-.footer-icons img:hover,
-.footer-icons img:focus {
+.footer-icons a:hover img,
+.footer-icons a:focus img {
   transform: scale(1.1);
   filter: grayscale(0%) brightness(1);
 }
@@ -387,8 +389,10 @@ tr:nth-child(even) {
 .footer-credit {
   font-size: 0.9rem;
   color: var(--text-color);
+  margin: 0;
 }
 
+/* Mobile responsive tweaks */
 @media (max-width: 600px) {
   .footer-icons {
     gap: 1rem;
