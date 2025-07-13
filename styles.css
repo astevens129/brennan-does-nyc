@@ -110,7 +110,6 @@ body {
   margin-bottom: 1rem;
 }
 
-/* === Quote Section Styles === */
 .quote-section {
   display: flex;
   flex-direction: column;
@@ -127,28 +126,6 @@ body {
   text-align: left;
 }
 
-.quote-card summary {
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 0.5rem;
-  background-color: var(--accent);
-  color: white;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.quote-card summary:hover,
-.quote-card summary:focus {
-  background-color: var(--hover-accent);
-  outline: none;
-}
-
-.quote-card summary:focus-visible {
-  outline: 3px dashed var(--hover-accent);
-  outline-offset: 4px;
-}
-
 .quote-card blockquote {
   margin: 0.5rem 0 0 0;
   font-size: 1.05rem;
@@ -163,61 +140,107 @@ body {
   margin-top: 0.5rem;
 }
 
-/* === Animation for Expanding Collapsible Quotes === */
-details[open] summary ~ * {
-  animation: fadeIn 0.3s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* === Table Styling for Old Haunts Page === */
-.table-wrapper {
-  margin-top: 2rem;
+.collapsible-quote {
   background-color: var(--card-bg);
+  border-left: 6px solid var(--accent);
   padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.collapsible-toggle {
+  background: var(--accent);
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.collapsible-toggle:hover,
+.collapsible-toggle:focus {
+  background-color: var(--hover-accent);
+}
+
+.collapsible-content {
+  margin-top: 1rem;
+}
+
+.form-and-aside {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  justify-content: space-between;
+}
+
+.form-card {
+  flex: 2;
+  background: var(--card-bg);
+  padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  overflow-x: auto;
+  text-align: left;
 }
 
-table {
+.form-card label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.form-card input,
+.form-card textarea {
   width: 100%;
-  border-collapse: collapse;
+  padding: 0.5rem;
   margin-bottom: 1rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
-caption {
-  font-weight: bold;
+.form-card button {
+  background: var(--accent);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-card button:hover {
+  background: var(--hover-accent);
+}
+
+.brennan-links {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.brennan-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.brennan-links li {
   margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-  color: var(--accent);
-  text-align: left;
 }
 
-th,
-td {
-  text-align: left;
-  padding: 1rem;
-  border-bottom: 1px solid var(--accent);
-}
-
-td a {
+.brennan-links a {
   color: var(--accent);
-  text-decoration: underline;
   font-weight: bold;
+  text-decoration: underline;
 }
 
-td a:hover,
-td a:focus {
+.brennan-links a:hover,
+.brennan-links a:focus {
   color: var(--hover-accent);
   background-color: rgba(0, 0, 0, 0.04);
   padding: 0.1rem 0.25rem;
@@ -225,39 +248,30 @@ td a:focus {
   outline: none;
 }
 
-/* === Responsive Table Enhancements === */
 @media (max-width: 768px) {
-  .table-wrapper {
-    padding: 0.5rem;
-  }
-
-  table, thead, tbody, th, td, tr {
+  .nav-toggle {
     display: block;
+    margin-top: 0.5rem;
   }
 
-  th {
+  .nav-list {
+    flex-direction: column;
     display: none;
   }
 
-  td {
-    position: relative;
-    padding-left: 50%;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+  .nav-list.open {
+    display: flex;
   }
 
-  td::before {
-    position: absolute;
-    left: 1rem;
-    top: 1rem;
-    content: attr(data-label);
-    font-weight: bold;
-    color: var(--accent);
-    white-space: nowrap;
+  .form-and-aside {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    padding: 0.5rem;
   }
 }
 
-/* === Footer Styles === */
 .site-footer {
   background-color: var(--card-bg);
   padding: 2rem 1rem;
