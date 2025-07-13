@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brennan Quotes |  The Brennan Inspired Guide To NYC</title>
+  <title>Brennan Quotes | The Brennan Inspired Guide To NYC</title>
+  <meta name="description" content="A curated collection of inspiring, funny, and heartfelt quotes by Brennan Lee Mulligan about NYC and life." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -15,7 +16,7 @@
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
       <ul class="nav-list" id="nav-list">
         <li><a href="index.html">Home</a></li>
-        <li><a href="brennan-quotes.html">Brennan Quotes</a></li>
+        <li><a href="brennan-quotes.html" class="active">Brennan Quotes</a></li>
         <li><a href="find-brennan.html">Find Brennan</a></li>
         <li><a href="old-haunts.html">Old Haunts</a></li>
         <li><a href="to-eat.html">To Eat</a></li>
@@ -23,10 +24,38 @@
       </ul>
     </nav>
   </header>
+
   <main class="wrapper">
-    <h1>Brennan Quotes</h1>
+    <h1>🗣️ Brennan Quotes</h1>
+
+    <img src="images/brennan-quotes-img.svg" alt="Brennan Lee Mulligan quoting passionately" class="page-banner" />
+
     <p>Here you'll find quotes from interviews, podcasts, and Dimension 20 that reveal Brennan's heart, humor, and love for NYC.</p>
+
+    <section class="quote-section">
+      <div class="quote-card">
+        <blockquote>
+          “New York is a city where you can't not be aware of the humanity of the people around you, and that is good for the soul.”
+        </blockquote>
+        <cite>— Brennan Lee Mulligan, Time Out NY</cite>
+      </div>
+
+      <div class="quote-card">
+        <blockquote>
+          “You can fall in love with the world every day if you choose to.”
+        </blockquote>
+        <cite>— Brennan Lee Mulligan</cite>
+      </div>
+
+      <div class="quote-card">
+        <blockquote>
+          “The only way to live in New York is to believe there’s magic around every corner.”
+        </blockquote>
+        <cite>— Brennan Lee Mulligan</cite>
+      </div>
+    </section>
   </main>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -35,6 +64,7 @@
       toggle.setAttribute('aria-expanded', !expanded);
       navList.classList.toggle('open');
     });
+
     const links = document.querySelectorAll('.nav-list a');
     const currentUrl = window.location.href;
     links.forEach(link => {
