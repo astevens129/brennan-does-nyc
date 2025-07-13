@@ -12,9 +12,7 @@
     <a href="index.html">
       <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
     </a>
-
     <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
-
     <nav class="site-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
       <ul class="nav-list" id="nav-list">
@@ -30,27 +28,24 @@
 
   <main class="wrapper">
     <h1>Where In The World is BLeeM?</h1>
-
     <img src="images/brennan-find-img.svg" alt="Illustration of Brennan with NYC map clues and magical signals" class="page-banner" />
 
     <div class="form-and-aside">
       <section aria-labelledby="feedback-title" class="feedback-form-section">
         <div class="form-card">
-          <form id="brennanForm" action="https://formspree.io/f/xovwggoj" method="POST" novalidate>
+          <form action="https://formspree.io/f/xovwggoj" method="POST">
             <label for="name">Your Name (optional)</label>
             <input type="text" id="name" name="name" placeholder="Legendary hero name" />
 
-            <label for="email">Your Email <span aria-hidden="true">*</span></label>
+            <label for="email">Your Email <span>*</span></label>
             <input type="email" id="email" name="email" required placeholder="you@nycquest.net" />
 
-            <label for="message">Where did you spot Brennan or what would you like to share? <span aria-hidden="true">*</span></label>
+            <label for="message">Where did you spot Brennan or what would you like to share? <span>*</span></label>
             <textarea id="message" name="message" rows="5" required placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
 
             <button type="submit">Send Message</button>
 
-            <!-- Message containers -->
-            <p id="formSuccess" class="form-message success" hidden>✅ Message sent! Thank you for the intel.</p>
-            <p id="formError" class="form-message error" hidden>⚠️ Please complete all required fields correctly.</p>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
           </form>
         </div>
       </section>
@@ -58,20 +53,19 @@
       <aside class="brennan-links" aria-labelledby="find-brennan-online">
         <h2 id="find-brennan-online">🔎 Find Brennan Online</h2>
         <ul>
-          <li><a href="https://www.brennanleemulligan.com/" target="_blank" rel="noopener">Brennan’s Official Website</a></li>
-          <li><a href="https://www.instagram.com/brennanleemulligan/" target="_blank" rel="noopener">Brennan’s Instagram</a></li>
-          <li><a href="https://www.instagram.com/dimension20show/" target="_blank" rel="noopener">Dimension 20 Instagram</a></li>
-          <li><a href="https://www.instagram.com/worldsbeyondnumber/" target="_blank" rel="noopener">Worlds Beyond Number Instagram</a></li>
-          <li><a href="https://www.youtube.com/@dimension20show" target="_blank" rel="noopener">Dimension 20 YouTube</a></li>
-          <li><a href="https://www.youtube.com/@worldsbeyondnumber" target="_blank" rel="noopener">Worlds Beyond Number YouTube</a></li>
-          <li><a href="https://www.dropout.tv/" target="_blank" rel="noopener">Dropout.tv</a></li>
-          <li><a href="https://www.patreon.com/worldsbeyondnumber" target="_blank" rel="noopener">Worlds Beyond Number Patreon</a></li>
+          <li><a href="https://www.brennanleemulligan.com/" target="_blank">Brennan’s Official Website</a></li>
+          <li><a href="https://www.instagram.com/brennanleemulligan/" target="_blank">Brennan’s Instagram</a></li>
+          <li><a href="https://www.instagram.com/dimension20show/" target="_blank">Dimension 20 Instagram</a></li>
+          <li><a href="https://www.instagram.com/worldsbeyondnumber/" target="_blank">Worlds Beyond Number Instagram</a></li>
+          <li><a href="https://www.youtube.com/@dimension20show" target="_blank">Dimension 20 YouTube</a></li>
+          <li><a href="https://www.youtube.com/@worldsbeyondnumber" target="_blank">Worlds Beyond Number YouTube</a></li>
+          <li><a href="https://www.dropout.tv/" target="_blank">Dropout.tv</a></li>
+          <li><a href="https://www.patreon.com/worldsbeyondnumber" target="_blank">WBN Patreon</a></li>
         </ul>
       </aside>
     </div>
   </main>
 
-  <!-- Mobile nav toggle -->
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -88,69 +82,44 @@
         link.classList.add('active');
       }
     });
-  </script>
 
-  <!-- Light/dark mode -->
-  <script src="js/theme-toggle.js" defer></script>
+    const form = document.querySelector("form");
+    const status = document.getElementById("form-status");
 
-  <!-- Form success/error messaging -->
-  <script>
-    document.getElementById('brennanForm').addEventListener('submit', async function (e) {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-
-      const form = e.target;
-      const email = form.email;
-      const message = form.message;
-      const success = document.getElementById('formSuccess');
-      const error = document.getElementById('formError');
-
-      // Hide previous messages
-      success.hidden = true;
-      error.hidden = true;
-
-      // Basic validation
-      if (!email.value || !message.value || !email.validity.valid) {
-        error.hidden = false;
-        return;
-      }
+      const data = new FormData(form);
+      const action = form.getAttribute("action");
 
       try {
-        const formData = new FormData(form);
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: formData,
+        const response = await fetch(action, {
+          method: "POST",
+          body: data,
           headers: { Accept: "application/json" }
         });
-
         if (response.ok) {
-          success.hidden = false;
+          status.textContent = "Message sent! Thank you 💌";
           form.reset();
         } else {
-          error.hidden = false;
+          status.textContent = "Oops! Something went wrong. Please try again.";
         }
-      } catch (err) {
-        error.hidden = false;
+      } catch (error) {
+        status.textContent = "Network error. Please check your connection.";
       }
     });
   </script>
 
-  <!--Footer Section-->
+  <script src="js/theme-toggle.js" defer></script>
+
   <footer class="site-footer" aria-label="Site footer with social links">
     <div class="footer-icons">
-      <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <img src="images/icon-github.svg" alt="GitHub" />
-      </a>
-      <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
-        <img src="images/icon-instagram.svg" alt="Instagram" />
-      </a>
-      <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
-        <img src="images/icon-tiktok.svg" alt="TikTok" />
-      </a>
-      <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
-        <img src="images/linktree.svg" alt="Linktree" />
-      </a>
+      <a href="https://github.com/astevens129" target="_blank" aria-label="GitHub Profile"><img src="images/icon-github.svg" alt="GitHub" /></a>
+      <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" aria-label="Instagram Profile"><img src="images/icon-instagram.svg" alt="Instagram" /></a>
+      <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" aria-label="TikTok Profile"><img src="images/icon-tiktok.svg" alt="TikTok" /></a>
+      <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" aria-label="Linktree Profile"><img src="images/linktree.svg" alt="Linktree" /></a>
     </div>
     <p class="footer-credit">&copy; Ashley Stevens</p>
   </footer>
 </body>
 </html>
+
