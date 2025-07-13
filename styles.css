@@ -272,6 +272,75 @@ body {
   color: var(--accent);
 }
 
+/* === Collapsible Quotes === */
+.collapsible-container {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.collapsible-toggle {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+.collapsible-toggle:hover,
+.collapsible-toggle:focus {
+  background-color: var(--hover-accent);
+  outline: none;
+}
+
+.collapsible-content {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.collapsible-content blockquote {
+  margin: 1rem 0;
+  font-style: italic;
+}
+
+.collapsible-content cite {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+/* === Responsive Layout === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .form-and-aside {
+    flex-direction: column;
+  }
+
+  .wrapper {
+    padding: 0.5rem;
+  }
+}
+
 /* === Table Styles === */
 .table-wrapper {
   overflow-x: auto;
@@ -301,7 +370,6 @@ tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-/* === Responsive Table (Mobile to Card Format) === */
 @media (max-width: 700px) {
   table thead {
     display: none;
@@ -362,10 +430,8 @@ tr:nth-child(even) {
 .footer-icons {
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
 }
 
 .footer-icons img {
@@ -375,24 +441,17 @@ tr:nth-child(even) {
   filter: grayscale(100%) brightness(0.8);
 }
 
-.footer-icons a:hover img,
-.footer-icons a:focus img {
+.footer-icons img:hover,
+.footer-icons img:focus {
   transform: scale(1.1);
   filter: grayscale(0%) brightness(1);
-}
-
-.footer-icons a:focus-visible {
-  outline: 3px dashed var(--accent);
-  outline-offset: 4px;
 }
 
 .footer-credit {
   font-size: 0.9rem;
   color: var(--text-color);
-  margin: 0;
 }
 
-/* Mobile responsive tweaks */
 @media (max-width: 600px) {
   .footer-icons {
     gap: 1rem;
