@@ -6,67 +6,16 @@
   <title>To Eat | A Brennan Inspired Guide To NYC</title>
   <meta name="description" content="Explore Brennan Lee Mulligan-approved food spots across NYC. From heavy eats to affordable gems, this list leaves no meal behind." />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .responsive-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .responsive-table th,
-    .responsive-table td {
-      border: 1px solid var(--accent);
-      padding: 0.75rem;
-      text-align: left;
-    }
-
-    .responsive-table th {
-      background-color: var(--card-bg);
-      color: var(--text-color);
-    }
-
-    @media (max-width: 768px) {
-      .responsive-table,
-      .responsive-table thead,
-      .responsive-table tbody,
-      .responsive-table th,
-      .responsive-table td,
-      .responsive-table tr {
-        display: block;
-      }
-
-      .responsive-table thead {
-        display: none;
-      }
-
-      .responsive-table tr {
-        margin-bottom: 1rem;
-        border: 1px solid var(--accent);
-        border-radius: 8px;
-        padding: 0.75rem;
-        background-color: var(--card-bg);
-      }
-
-      .responsive-table td {
-        border: none;
-        padding: 0.5rem 0;
-        position: relative;
-      }
-
-      .responsive-table td::before {
-        content: attr(data-label);
-        font-weight: bold;
-        display: block;
-        margin-bottom: 0.25rem;
-        color: var(--accent);
-      }
-    }
-  </style>
 </head>
 <body>
   <header class="site-header">
     <a href="index.html">
       <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
     </a>
+
+    <!-- Light/Dark Toggle -->
+    <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
+
     <nav class="site-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
       <ul class="nav-list" id="nav-list">
@@ -86,44 +35,53 @@
 
     <p>This is your Brennan-approved culinary quest list: Heavy food. Affordable food. No meal left behind.</p>
 
-    <table class="responsive-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Neighborhood</th>
-          <th>Highlights</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td data-label="Name">Gray's Papaya</td>
-          <td data-label="Neighborhood">Upper West Side</td>
-          <td data-label="Highlights">Hot dogs & papaya drink combo</td>
-        </tr>
-        <tr>
-          <td data-label="Name">Mamouns Falafel</td>
-          <td data-label="Neighborhood">Greenwich Village</td>
-          <td data-label="Highlights">Late night falafel wraps</td>
-        </tr>
-        <tr>
-          <td data-label="Name">Katz's Delicatessen</td>
-          <td data-label="Neighborhood">Lower East Side</td>
-          <td data-label="Highlights">Pastrami on rye; historic vibes</td>
-        </tr>
-        <tr>
-          <td data-label="Name">Prince Street Pizza</td>
-          <td data-label="Neighborhood">Nolita</td>
-          <td data-label="Highlights">Pepperoni squares with crispy edges</td>
-        </tr>
-        <tr>
-          <td data-label="Name">Xi'an Famous Foods</td>
-          <td data-label="Neighborhood">Multiple Locations</td>
-          <td data-label="Highlights">Hand-pulled noodles, lamb burgers</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-wrapper">
+      <table class="responsive-table">
+        <thead>
+          <tr>
+            <th>Restaurant</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Katz’s Delicatessen</td>
+            <td>Lower East Side</td>
+            <td>Deli</td>
+            <td>Iconic. Best pastrami sandwich you'll ever regret finishing.</td>
+          </tr>
+          <tr>
+            <td>Joe’s Pizza</td>
+            <td>Greenwich Village</td>
+            <td>Pizza</td>
+            <td>Fold it, walk fast, pretend you’re late for rehearsal.</td>
+          </tr>
+          <tr>
+            <td>Prince Street Pizza</td>
+            <td>SoHo</td>
+            <td>Pizza</td>
+            <td>Thick pepperoni slices. Big flavor. No regrets.</td>
+          </tr>
+          <tr>
+            <td>Mamouns Falafel</td>
+            <td>MacDougal Street</td>
+            <td>Middle Eastern</td>
+            <td>Cheap. Delicious. Spiritual experience at 2AM.</td>
+          </tr>
+          <tr>
+            <td>Russ & Daughters</td>
+            <td>East Houston St</td>
+            <td>Jewish Deli</td>
+            <td>Bagels + lox = divine intervention in food form.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </main>
 
+  <!-- Navigation toggle script -->
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -141,7 +99,8 @@
       }
     });
   </script>
+
+  <!-- Theme toggle script -->
   <script src="js/theme-toggle.js" defer></script>
 </body>
 </html>
-
