@@ -123,12 +123,26 @@ ol.styled-list {
 
 ul.styled-list li,
 ol.styled-list li {
-  padding-left: 2rem;
+  position: relative;
+  padding-left: 2.2rem;
   margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+ul.styled-list li::before,
+ol.styled-list li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 1.4rem;
+  height: 1.4rem;
   background-image: var(--d20-icon);
+  background-size: contain;
   background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 0 4px;
+  background-position: center;
+  aspect-ratio: 1 / 1;
 }
 
 /* === Quote Sections === */
