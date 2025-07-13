@@ -12,6 +12,9 @@
     <a href="index.html">
       <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
     </a>
+
+    <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
+
     <nav class="site-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
       <ul class="nav-list" id="nav-list">
@@ -27,6 +30,7 @@
 
   <main class="wrapper">
     <h1>🍕 To Eat</h1>
+
     <img src="images/brennan-to-eat-img.svg" alt="Brennan Lee Mulligan as a giant playfully holding a bus over New York City with a rainbow in the sky" class="page-banner" />
 
     <p>This is your Brennan-approved culinary quest list: Heavy food. Affordable food. No meal left behind.</p>
@@ -51,6 +55,8 @@
       }
     });
   </script>
+
+  <script src="js/theme-toggle.js" defer></script>
 </body>
 </html>
 
