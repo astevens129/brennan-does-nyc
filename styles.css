@@ -3,6 +3,23 @@
   box-sizing: border-box;
 }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  transition: top 0.3s;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
 /* === Theme Variables === */
 :root {
   --bg-color: #E5E1E2;
@@ -195,6 +212,11 @@ ol.styled-list:not(.collapsible-ol) li::before,
   outline: none;
 }
 
+  .collapsible-toggle:focus-visible {
+  outline: 3px dashed var(--accent);
+  outline-offset: 4px;
+}
+
 .collapsible-content {
   background-color: var(--card-bg);
   border-left: 4px solid var(--accent);
@@ -323,6 +345,13 @@ td a:focus {
   font-size: 1rem;
   background-color: var(--link-bg);
   color: var(--text-color);
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  outline: 3px dashed var(--accent);
+  outline-offset: 3px;
+  background-color: var(--link-bg);
 }
 
 .form-card button {
