@@ -55,6 +55,7 @@ body {
   transition: transform 0.2s ease;
   color: var(--text-color);
 }
+
 #mode-toggle:hover,
 #mode-toggle:focus {
   transform: scale(1.1);
@@ -110,6 +111,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* === Quote Sections === */
 .quote-section {
   display: flex;
   flex-direction: column;
@@ -140,97 +142,159 @@ body {
   margin-top: 0.5rem;
 }
 
-.collapsible-quote {
-  background-color: var(--card-bg);
-  border-left: 6px solid var(--accent);
-  padding: 1rem;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
+/* === Collapsible Quotes === */
+.collapsible-quotes {
+  margin-top: 3rem;
   text-align: left;
 }
 
+.collapsible-quote {
+  background-color: var(--card-bg);
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
 .collapsible-toggle {
-  background: var(--accent);
+  background-color: var(--accent);
   color: white;
-  font-weight: bold;
-  padding: 0.5rem;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 0.75rem 1rem;
   width: 100%;
   text-align: left;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .collapsible-toggle:hover,
 .collapsible-toggle:focus {
   background-color: var(--hover-accent);
+  outline: none;
 }
 
 .collapsible-content {
   margin-top: 1rem;
+  padding-left: 1rem;
 }
 
+/* === Table Styling (Old Haunts) === */
+.table-wrapper {
+  margin-top: 2rem;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+caption {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  color: var(--accent);
+  text-align: left;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--accent);
+}
+
+td a {
+  color: var(--accent);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+td a:hover,
+td a:focus {
+  color: var(--hover-accent);
+  background-color: rgba(0, 0, 0, 0.04);
+  padding: 0.1rem 0.25rem;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* === Form and Aside Layout === */
 .form-and-aside {
   display: flex;
   gap: 2rem;
   margin-top: 2rem;
-  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.feedback-form-section {
+  flex: 2;
 }
 
 .form-card {
-  flex: 2;
-  background: var(--card-bg);
-  padding: 1.5rem;
+  background-color: var(--card-bg);
+  padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: left;
 }
 
 .form-card label {
   display: block;
-  margin-bottom: 0.25rem;
+  margin-top: 1rem;
   font-weight: bold;
 }
 
 .form-card input,
 .form-card textarea {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
   border: 1px solid var(--accent);
-  border-radius: 4px;
+  border-radius: 5px;
   font-size: 1rem;
+  background-color: var(--link-bg);
+  color: var(--text-color);
 }
 
 .form-card button {
-  background: var(--accent);
+  margin-top: 1.5rem;
+  background-color: var(--accent);
   color: white;
-  padding: 0.6rem 1.2rem;
   border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .form-card button:hover {
-  background: var(--hover-accent);
+  background-color: var(--hover-accent);
 }
 
 .brennan-links {
   flex: 1;
-  background: var(--card-bg);
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   text-align: left;
 }
 
 .brennan-links ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .brennan-links li {
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
 .brennan-links a {
@@ -242,36 +306,12 @@ body {
 .brennan-links a:hover,
 .brennan-links a:focus {
   color: var(--hover-accent);
-  background-color: rgba(0, 0, 0, 0.04);
-  padding: 0.1rem 0.25rem;
+  background-color: rgba(0,0,0,0.04);
+  padding: 0.2rem 0.3rem;
   border-radius: 4px;
-  outline: none;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    margin-top: 0.5rem;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    display: none;
-  }
-
-  .nav-list.open {
-    display: flex;
-  }
-
-  .form-and-aside {
-    flex-direction: column;
-  }
-
-  .wrapper {
-    padding: 0.5rem;
-  }
-}
-
+/* === Footer === */
 .site-footer {
   background-color: var(--card-bg);
   padding: 2rem 1rem;
@@ -303,6 +343,31 @@ body {
 .footer-credit {
   font-size: 0.9rem;
   color: var(--text-color);
+}
+
+/* === Mobile === */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    margin-top: 0.5rem;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    display: none;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .wrapper {
+    padding: 0.5rem;
+  }
+
+  .form-and-aside {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
