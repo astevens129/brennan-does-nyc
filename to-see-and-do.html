@@ -44,27 +44,32 @@
       <blockquote>“Confront your shared humanity.”</blockquote>
 
       <p>You’ve got a few options for fare payment:</p>
-      <ol class="styled-list">
-        <li>Use a tap-to-pay card or digital wallet (OMNY) — weekly fares cap at $34 if you use the same card/device.</li>
-        <li>Buy a MetroCard — get unlimited 7-day or 30-day passes (can include Express Buses).</li>
-        <li>Purchase a single ride ticket — $3.25 per trip.</li>
+      <ol class="styled-list collapsible-ol">
+        <li>
+          <button class="collapsible-toggle" aria-expanded="false">
+            1. Use a tap-to-pay card or digital wallet (OMNY)
+          </button>
+          <div class="collapsible-content" hidden>
+            Weekly fares cap at $34 if you use the same card/device.
+          </div>
+        </li>
+        <li>
+          <button class="collapsible-toggle" aria-expanded="false">
+            2. Buy a MetroCard
+          </button>
+          <div class="collapsible-content" hidden>
+            Get unlimited 7-day or 30-day passes (can include Express Buses).
+          </div>
+        </li>
+        <li>
+          <button class="collapsible-toggle" aria-expanded="false">
+            3. Purchase a single ride ticket
+          </button>
+          <div class="collapsible-content" hidden>
+            $3.25 per trip.
+          </div>
+        </li>
       </ol>
-    </section>
-
-    <section class="quote-card">
-      <h2>2. Visit the Cellar Dog</h2>
-      <p>
-        Formerly Fat Cat, the
-        <a href="https://www.cellardog.net/" target="_blank" rel="noopener">Cellar Dog</a> (75 Christopher St)
-        is a Brennan-endorsed gem that offers:
-      </p>
-      <ul class="styled-list">
-        <li>Live Jazz</li>
-        <li>Shuffleboard</li>
-        <li>Billiards</li>
-        <li>Ping-Pong</li>
-        <li>Arcade Games & more</li>
-      </ul>
     </section>
   </main>
 
@@ -90,6 +95,18 @@
   <!-- Light/dark mode toggle -->
   <script src="js/theme-toggle.js" defer></script>
 
+  <!-- Collapsible <ol> functionality -->
+  <script>
+    document.querySelectorAll('.collapsible-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const content = button.nextElementSibling;
+        button.setAttribute('aria-expanded', !expanded);
+        content.hidden = expanded;
+      });
+    });
+  </script>
+
   <!-- Footer -->
   <footer class="site-footer" aria-label="Site footer with social links">
     <div class="footer-icons">
@@ -111,3 +128,4 @@
   </footer>
 </body>
 </html>
+
