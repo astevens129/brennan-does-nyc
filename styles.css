@@ -229,7 +229,34 @@ body {
   .wrapper {
     padding: 0.5rem;
   }
+.quote-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
 }
+
+.quote-card {
+  background-color: #ffffff;
+  border-left: 6px solid #5c6a9a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: left;
+}
+
+.quote-card blockquote {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #23171f;
+}
+
+.quote-card cite {
+  font-size: 0.95rem;
+  color: #5c6a9a;
+}
+
 
 
 
