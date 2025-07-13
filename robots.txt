@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://astevens129.github.io/brennan-does-nyc/sitemap.xml
