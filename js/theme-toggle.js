@@ -2,14 +2,24 @@ const toggleButton = document.getElementById('mode-toggle');
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const currentTheme = localStorage.getItem('theme');
 
-// Apply saved or system theme
-if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
-  document.body.classList.add('dark-mode');
+// Helper to update button state
+function updateToggleButton(isDark) {
+  toggleButton.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  toggleButton.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  toggleButton.textContent = isDark ? '🌙' : '🌞';
 }
 
-// Toggle theme on button click
+// Apply saved or system theme on load
+if (currentTheme === 'dark' || (!currentTheme && prefersDark)) {
+  document.body.classList.add('dark-mode');
+  updateToggleButton(true);
+} else {
+  updateToggleButton(false);
+}
+
+// Handle toggle interaction
 toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
-  localStorage.setItem('theme', theme);
+  const isDark = document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  updateToggleButton(isDark);
 });
