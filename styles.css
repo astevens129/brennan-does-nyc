@@ -132,7 +132,7 @@ ol.styled-list li,
 }
 
 ul.styled-list li::before,
-ol.styled-list li::before,
+ol.styled-list:not(.collapsible-ol) li::before,
 .brennan-links li::before {
   content: "";
   position: absolute;
@@ -161,6 +161,7 @@ ol.styled-list li::before,
   padding: 0.2rem 0.3rem;
   border-radius: 4px;
 }
+
 /* === Collapsible Ordered List Styling === */
 .collapsible-ol {
   list-style: none;
@@ -203,6 +204,11 @@ ol.styled-list li::before,
   font-size: 0.95rem;
 }
 
+.collapsible-content p,
+.collapsible-content ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
 
 /* === Quote Sections === */
 .quote-section {
