@@ -1,4 +1,4 @@
-/* === Global Reset and Box Sizing === */
+* === Global Reset and Box Sizing === */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -113,16 +113,18 @@ body {
   margin-bottom: 1rem;
 }
 
-/* === Styled List Items with D20 Icons === */
+/* === D20 List Styling (Unified) === */
 ul.styled-list,
-ol.styled-list {
+ol.styled-list,
+.brennan-links ul {
   list-style: none;
   padding-left: 0;
   margin-top: 1rem;
 }
 
 ul.styled-list li,
-ol.styled-list li {
+ol.styled-list li,
+.brennan-links li {
   position: relative;
   padding-left: 2.2rem;
   margin-bottom: 1rem;
@@ -130,7 +132,8 @@ ol.styled-list li {
 }
 
 ul.styled-list li::before,
-ol.styled-list li::before {
+ol.styled-list li::before,
+.brennan-links li::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -143,6 +146,20 @@ ol.styled-list li::before {
   background-repeat: no-repeat;
   background-position: center;
   aspect-ratio: 1 / 1;
+}
+
+.brennan-links a {
+  color: var(--accent);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.brennan-links a:hover,
+.brennan-links a:focus {
+  color: var(--hover-accent);
+  background-color: rgba(0,0,0,0.04);
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
 }
 
 /* === Quote Sections === */
@@ -176,228 +193,6 @@ ol.styled-list li::before {
   margin-top: 0.5rem;
 }
 
-/* === Collapsible Quotes === */
-.collapsible-quotes {
-  margin-top: 3rem;
-  text-align: left;
-}
-
-.collapsible-quote {
-  background-color: var(--card-bg);
-  border-left: 4px solid var(--accent);
-  margin-bottom: 1.5rem;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-.collapsible-toggle {
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.75rem 1rem;
-  width: 100%;
-  text-align: left;
-  font-weight: bold;
-  font-size: 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.collapsible-toggle:hover,
-.collapsible-toggle:focus {
-  background-color: var(--hover-accent);
-  outline: none;
-}
-
-.collapsible-content {
-  margin-top: 1rem;
-  padding-left: 1rem;
-}
-
-/* === Table Styling === */
-.table-wrapper {
-  margin-top: 2rem;
-  background-color: var(--card-bg);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  overflow-x: auto;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1rem;
-}
-
-caption {
-  font-weight: bold;
-  margin-bottom: 0.75rem;
-  font-size: 1.1rem;
-  color: var(--accent);
-  text-align: left;
-}
-
-th, td {
-  text-align: left;
-  padding: 1rem;
-  border-bottom: 1px solid var(--accent);
-}
-
-td a {
-  color: var(--accent);
-  text-decoration: underline;
-  font-weight: bold;
-}
-
-td a:hover,
-td a:focus {
-  color: var(--hover-accent);
-  background-color: rgba(0, 0, 0, 0.04);
-  padding: 0.1rem 0.25rem;
-  border-radius: 4px;
-  outline: none;
-}
-
-/* === Form and Aside Layout === */
-.form-and-aside {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-
-.feedback-form-section {
-  flex: 2;
-}
-
-.form-card {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.form-card label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: bold;
-}
-
-.form-card input,
-.form-card textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 0.5rem;
-  border: 1px solid var(--accent);
-  border-radius: 5px;
-  font-size: 1rem;
-  background-color: var(--link-bg);
-  color: var(--text-color);
-}
-
-.form-card button {
-  margin-top: 1.5rem;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.form-card button:hover {
-  background-color: var(--hover-accent);
-}
-
-/* === Brennan Links List === */
-.brennan-links {
-  flex: 1;
-  background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: left;
-}
-
-.brennan-links ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.brennan-links li {
-  padding-left: 2rem;
-  margin-bottom: 1rem;
-  background-repeat: no-repeat;
-  background-size: 20px 20px;
-  background-position: 0 4px;
-}
-
-body:not(.dark-mode) .brennan-links li {
-  background-image: url("images/icon-d20-light.png");
-}
-
-body.dark-mode .brennan-links li {
-  background-image: url("images/icon-d20-dark.png");
-}
-
-.brennan-links a {
-  color: var(--accent);
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.brennan-links a:hover,
-.brennan-links a:focus {
-  color: var(--hover-accent);
-  background-color: rgba(0,0,0,0.04);
-  padding: 0.2rem 0.3rem;
-  border-radius: 4px;
-}
-
-/* === Footer === */
-.site-footer {
-  background-color: var(--card-bg);
-  padding: 2rem 1rem;
-  text-align: center;
-  border-top: 2px solid var(--accent);
-  margin-top: 3rem;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-icons img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.2s ease, filter 0.3s ease;
-  filter: grayscale(100%) brightness(0.8);
-}
-
-.footer-icons img:hover,
-.footer-icons img:focus {
-  transform: scale(1.1);
-  filter: grayscale(0%) brightness(1);
-}
-
-.footer-credit {
-  font-size: 0.9rem;
-  color: var(--text-color);
-}
-
-.footer-note {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  color: var(--hover-accent);
-}
-
 /* === Responsive === */
 @media (max-width: 768px) {
   .nav-toggle {
@@ -416,21 +211,6 @@ body.dark-mode .brennan-links li {
 
   .wrapper {
     padding: 0.5rem;
-  }
-
-  .form-and-aside {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 600px) {
-  .footer-icons {
-    gap: 1rem;
-  }
-
-  .footer-icons img {
-    width: 28px;
-    height: 28px;
   }
 }
 
