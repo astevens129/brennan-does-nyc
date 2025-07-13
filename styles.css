@@ -110,6 +110,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* === Quote Section Styles === */
 .quote-section {
   display: flex;
   flex-direction: column;
@@ -143,6 +144,11 @@ body {
   outline: none;
 }
 
+.quote-card summary:focus-visible {
+  outline: 3px dashed var(--hover-accent);
+  outline-offset: 4px;
+}
+
 .quote-card blockquote {
   margin: 0.5rem 0 0 0;
   font-size: 1.05rem;
@@ -157,73 +163,22 @@ body {
   margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-    margin-top: 0.5rem;
-  }
+/* === Animation for Expanding Collapsible Quotes === */
+details[open] summary ~ * {
+  animation: fadeIn 0.3s ease-in;
+}
 
-  .nav-list {
-    flex-direction: column;
-    display: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
   }
-
-  .nav-list.open {
-    display: flex;
-  }
-
-  .form-and-aside {
-    flex-direction: column;
-  }
-
-  .wrapper {
-    padding: 0.5rem;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.site-footer {
-  background-color: var(--card-bg);
-  padding: 2rem 1rem;
-  text-align: center;
-  border-top: 2px solid var(--accent);
-  margin-top: 3rem;
-}
-
-.footer-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.footer-icons img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.2s ease, filter 0.3s ease;
-  filter: grayscale(100%) brightness(0.8);
-}
-
-.footer-icons img:hover,
-.footer-icons img:focus {
-  transform: scale(1.1);
-  filter: grayscale(0%) brightness(1);
-}
-
-.footer-credit {
-  font-size: 0.9rem;
-  color: var(--text-color);
-}
-
-@media (max-width: 600px) {
-  .footer-icons {
-    gap: 1rem;
-  }
-
-  .footer-icons img {
-    width: 28px;
-    height: 28px;
-  }
-}
 /* === Table Styling for Old Haunts Page === */
 .table-wrapper {
   margin-top: 2rem;
@@ -270,13 +225,79 @@ td a:focus {
   outline: none;
 }
 
+/* === Responsive Table Enhancements === */
 @media (max-width: 768px) {
   .table-wrapper {
     padding: 0.5rem;
   }
 
-  th,
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  th {
+    display: none;
+  }
+
   td {
-    padding: 0.75rem;
+    position: relative;
+    padding-left: 50%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  td::before {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    content: attr(data-label);
+    font-weight: bold;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+}
+
+/* === Footer Styles === */
+.site-footer {
+  background-color: var(--card-bg);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid var(--accent);
+  margin-top: 3rem;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-icons img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  filter: grayscale(100%) brightness(0.8);
+}
+
+.footer-icons img:hover,
+.footer-icons img:focus {
+  transform: scale(1.1);
+  filter: grayscale(0%) brightness(1);
+}
+
+.footer-credit {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+  .footer-icons {
+    gap: 1rem;
+  }
+
+  .footer-icons img {
+    width: 28px;
+    height: 28px;
   }
 }
