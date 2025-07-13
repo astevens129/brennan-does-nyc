@@ -11,22 +11,30 @@
     <a href="index.html">
       <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
     </a>
+
+    <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
+
     <nav class="site-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
       <ul class="nav-list" id="nav-list">
         <li><a href="index.html">Home</a></li>
         <li><a href="brennan-quotes.html">Brennan Quotes</a></li>
         <li><a href="find-brennan.html">Find Brennan</a></li>
-        <li><a href="old-haunts.html">Old Haunts</a></li>
+        <li><a href="old-haunts.html" class="active">Old Haunts</a></li>
         <li><a href="to-eat.html">To Eat</a></li>
         <li><a href="to-see-and-do.html">To See & Do</a></li>
       </ul>
     </nav>
   </header>
+
   <main class="wrapper">
     <h1>Old Haunts</h1>
+
+    <img src="images/brennan-old-haunts-img.svg" alt="Stylized illustration of NYC ghost station and lore" class="page-banner" />
+
     <p>Explore iconic locations Brennan has referenced—from ghost stations to bodega legends—and uncover their lore in the real world.</p>
   </main>
+
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -35,6 +43,7 @@
       toggle.setAttribute('aria-expanded', !expanded);
       navList.classList.toggle('open');
     });
+
     const links = document.querySelectorAll('.nav-list a');
     const currentUrl = window.location.href;
     links.forEach(link => {
@@ -43,5 +52,7 @@
       }
     });
   </script>
+
+  <script src="js/theme-toggle.js" defer></script>
 </body>
 </html>
