@@ -36,17 +36,21 @@
     <div class="form-and-aside">
       <section aria-labelledby="feedback-title" class="feedback-form-section">
         <div class="form-card">
-          <form action="https://formspree.io/f/xovwggoj" method="POST" novalidate>
+          <form id="brennanForm" action="https://formspree.io/f/xovwggoj" method="POST" novalidate>
             <label for="name">Your Name (optional)</label>
             <input type="text" id="name" name="name" placeholder="Legendary hero name" />
 
             <label for="email">Your Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="email" name="email" required aria-required="true" placeholder="you@nycquest.net" />
+            <input type="email" id="email" name="email" required placeholder="you@nycquest.net" />
 
             <label for="message">Where did you spot Brennan or what would you like to share? <span aria-hidden="true">*</span></label>
-            <textarea id="message" name="message" rows="5" required aria-required="true" placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Did he have dice? Was he in a bodega? We need intel."></textarea>
 
             <button type="submit">Send Message</button>
+
+            <!-- Message containers -->
+            <p id="formSuccess" class="form-message success" hidden>✅ Message sent! Thank you for the intel.</p>
+            <p id="formError" class="form-message error" hidden>⚠️ Please complete all required fields correctly.</p>
           </form>
         </div>
       </section>
@@ -67,7 +71,7 @@
     </div>
   </main>
 
-  <!-- Mobile menu toggle -->
+  <!-- Mobile nav toggle -->
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -88,26 +92,65 @@
 
   <!-- Light/dark mode -->
   <script src="js/theme-toggle.js" defer></script>
-  
-<!--Footer Section-->
-<footer class="site-footer" aria-label="Site footer with social links">
-  <div class="footer-icons">
-    <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
-      <img src="images/icon-github.svg" alt="GitHub" />
-    </a>
-    <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
-      <img src="images/icon-instagram.svg" alt="Instagram" />
-    </a>
-    <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
-      <img src="images/icon-tiktok.svg" alt="TikTok" />
-    </a>
-    <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
-      <img src="images/linktree.svg" alt="Linktree" />
-    </a>
-  </div>
-  <p class="footer-credit">&copy; Ashley Stevens</p>
-</footer>
 
+  <!-- Form success/error messaging -->
+  <script>
+    document.getElementById('brennanForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
 
+      const form = e.target;
+      const email = form.email;
+      const message = form.message;
+      const success = document.getElementById('formSuccess');
+      const error = document.getElementById('formError');
+
+      // Hide previous messages
+      success.hidden = true;
+      error.hidden = true;
+
+      // Basic validation
+      if (!email.value || !message.value || !email.validity.valid) {
+        error.hidden = false;
+        return;
+      }
+
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" }
+        });
+
+        if (response.ok) {
+          success.hidden = false;
+          form.reset();
+        } else {
+          error.hidden = false;
+        }
+      } catch (err) {
+        error.hidden = false;
+      }
+    });
+  </script>
+
+  <!--Footer Section-->
+  <footer class="site-footer" aria-label="Site footer with social links">
+    <div class="footer-icons">
+      <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <img src="images/icon-github.svg" alt="GitHub" />
+      </a>
+      <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
+        <img src="images/icon-instagram.svg" alt="Instagram" />
+      </a>
+      <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
+        <img src="images/icon-tiktok.svg" alt="TikTok" />
+      </a>
+      <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
+        <img src="images/linktree.svg" alt="Linktree" />
+      </a>
+    </div>
+    <p class="footer-credit">&copy; Ashley Stevens</p>
+  </footer>
 </body>
 </html>
