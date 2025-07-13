@@ -372,31 +372,47 @@ tr:nth-child(even) {
   table td:last-child {
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-  }.site-footer {
-  text-align: center;
-  padding: 2rem 1rem;
+  }
+  
+ .site-footer {
   background-color: var(--card-bg);
-  color: var(--text-color);
+  padding: 2rem 1rem;
+  text-align: center;
   border-top: 2px solid var(--accent);
   margin-top: 3rem;
 }
 
-.site-footer .social-icons {
+.footer-icons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.site-footer .social-icons img {
+.footer-icons img {
   width: 32px;
   height: 32px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: transform 0.2s ease, filter 0.3s ease;
+  filter: grayscale(100%) brightness(0.8);
 }
 
-.site-footer .social-icons img:hover,
-.site-footer .social-icons img:focus {
+.footer-icons img:hover,
+.footer-icons img:focus {
   transform: scale(1.1);
-  opacity: 0.8;
+  filter: grayscale(0%) brightness(1);
 }
 
+.footer-credit {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+@media (max-width: 600px) {
+  .footer-icons {
+    gap: 1rem;
+  }
+
+  .footer-icons img {
+    width: 28px;
+    height: 28px;
+  }
+}
