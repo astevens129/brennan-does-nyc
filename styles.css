@@ -297,6 +297,8 @@ body {
     padding: 0.5rem;
   }
 }
+
+/* === Table Styles === */
 .table-wrapper {
   overflow-x: auto;
   margin-top: 2rem;
@@ -325,9 +327,51 @@ tr:nth-child(even) {
   background-color: rgba(0, 0, 0, 0.03);
 }
 
-@media (max-width: 600px) {
-  th, td {
-    font-size: 0.9rem;
-    padding: 0.5rem;
+@media (max-width: 700px) {
+  table thead {
+    display: none;
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  table td {
+    padding: 0.75rem;
+    text-align: left;
+    position: relative;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: bold;
+    background-color: var(--accent);
+    color: white;
+    border-bottom: 1px solid #ddd;
+  }
+
+  table td:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  table td:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 }
+
