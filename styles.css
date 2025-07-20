@@ -409,6 +409,13 @@ td a:focus {
   color: var(--hover-accent);
 }
 
+.validator-badges {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .nav-toggle {
