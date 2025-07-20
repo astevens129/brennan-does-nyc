@@ -450,12 +450,14 @@ td a:focus {
 
 .badge-note {
   text-align: center;
-  font-size: 0.9rem;
-  color: #bbb;
+  font-size: 0.95rem;
+  color: #f0f0ff; /* Brighter, high-contrast soft white */
   margin-top: 8px;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 0.5px;
+  text-shadow: 0 0 2px #1e1e2f; /* optional glow for magic vibe */
 }
+
 
 
 /* === Responsive === */
