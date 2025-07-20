@@ -456,12 +456,11 @@ td a:focus {
 .badge-note {
   text-align: center;
   font-size: 0.9rem;
-  color: #1a285f; /* Changed from #bbb for accessibility */
-  margin-top: 8px;
+color: #4b3a71; /* contrast ~6.2:1 on #E5E1E2 */
+ margin-top: 8px;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 0.5px;
 }
-
 
 
 
