@@ -520,4 +520,38 @@ td a:focus {
   border-radius: 4px;
 }
 
+/* Responsive table for to eat page for mobile */
+@media screen and (max-width: 768px) {
+  .responsive-table {
+    border: 0;
+  }
+
+  .responsive-table thead {
+    display: none;
+  }
+
+  .responsive-table tr {
+    display: block;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  .responsive-table td {
+    display: block;
+    text-align: left;
+    font-size: 0.95em;
+    padding: 8px 0;
+  }
+
+  .responsive-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    color: #555;
+    margin-bottom: 4px;
+  }
+}
+
 
