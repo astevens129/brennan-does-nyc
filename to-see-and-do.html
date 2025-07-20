@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>To See & Do | The Brennan Inspired Guide To NYC</title>
-  <meta name="description" content="Walk the ley lines of NYC with Brennan Lee Mulligan's magical guide. From subway quests to jazz bars, start your journey here." />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Walk the ley lines of NYC with Brennan Lee Mulligan's magical guide. From subway quests to jazz bars, start your journey here.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
     <a href="index.html">
-      <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo" />
+      <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo">
     </a>
 
     <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
@@ -31,59 +31,58 @@
   <main class="wrapper">
     <h1>🗺️ To See & Do</h1>
 
-    <img src="images/brennan-to-do-img.svg" alt="Brennan Lee Mulligan holding dice over NYC with magical energy and skyline" class="page-banner" />
+    <img src="images/brennan-to-do-img.svg" alt="Brennan Lee Mulligan holding dice over NYC with magical energy and skyline" class="page-banner">
 
     <p>“Want to walk the ley lines or find a little magic between subway stops? Before you go, make sure to check out <a href='brennan-quotes.html'>Brennan’s quotes</a> that inspired this journey.”</p>
 
-  <section class="quote-card">
-  <h2>Things To Do</h2>
-  <p>Want to walk the ley lines or find a little magic between subway stops? This is your to-do list for experiencing Brennan's NYC.</p>
+    <section class="quote-card">
+      <h2>Things To Do</h2>
+      <p>Want to walk the ley lines or find a little magic between subway stops? This is your to-do list for experiencing Brennan's NYC.</p>
 
-  <ol class="styled-list collapsible-ol">
-    <li>
-      <button class="collapsible-toggle" aria-expanded="false">
-        1. Ride the Subway
-      </button>
-      <div class="collapsible-content" hidden>
-        <p>
-          Brennan insists: if you want the real NYC experience, you <em>must</em> ride the
-          <a href="https://www.mta.info/fares-tolls" target="_blank" rel="noopener">subway</a> (and maybe swing by one of his <a href='old-haunts.html'>favorite old haunts</a> while you're underground)… so you can:
-        </p>
-        <blockquote>“Confront your shared humanity.”</blockquote>
-        <p>You’ve got a few options for fare payment:</p>
-        <ul class="styled-list">
-          <li>Use a tap-to-pay card or digital wallet (OMNY) — weekly fares cap at $34 if you use the same card/device.</li>
-          <li>Buy a MetroCard — get unlimited 7-day or 30-day passes (can include Express Buses).</li>
-          <li>Purchase a single ride ticket — $3.25 per trip.</li>
-          <li>If you’re hungry after a subway ride, check out our <a href='to-eat.html'>To Eat</a> guide.</li>
-        </ul>
-      </div>
-    </li>
+      <ol class="styled-list collapsible-ol">
+        <li>
+          <button class="collapsible-toggle" aria-expanded="false">
+            1. Ride the Subway
+          </button>
+          <div class="collapsible-content" hidden>
+            <p>
+              Brennan insists: if you want the real NYC experience, you <em>must</em> ride the
+              <a href="https://www.mta.info/fares-tolls" target="_blank" rel="noopener">subway</a> (and maybe swing by one of his <a href='old-haunts.html'>favorite old haunts</a> while you're underground)… so you can:
+            </p>
+            <blockquote>“Confront your shared humanity.”</blockquote>
+            <p>You’ve got a few options for fare payment:</p>
+            <ul class="styled-list">
+              <li>Use a tap-to-pay card or digital wallet (OMNY) — weekly fares cap at $34 if you use the same card/device.</li>
+              <li>Buy a MetroCard — get unlimited 7-day or 30-day passes (can include Express Buses).</li>
+              <li>Purchase a single ride ticket — $3.25 per trip.</li>
+              <li>If you’re hungry after a subway ride, check out our <a href='to-eat.html'>To Eat</a> guide.</li>
+            </ul>
+          </div>
+        </li>
 
-    <li>
-      <button class="collapsible-toggle" aria-expanded="false">
-        2. Visit the Cellar Dog
-      </button>
-      <div class="collapsible-content" hidden>
-        <p>
-          Formerly Fat Cat, the
-          <a href="https://www.cellardog.net/" target="_blank" rel="noopener">Cellar Dog</a> (75 Christopher St)
-          is a Brennan-endorsed gem that offers:
-        </p>
-        <ul class="styled-list">
-          <li>Live Jazz</li>
-          <li>Shuffleboard</li>
-          <li>Billiards</li>
-          <li>Ping-Pong</li>
-          <li>Arcade Games & more</li>
-        </ul>
-      </div>
-    </li>
-  </ol>
-</section>
+        <li>
+          <button class="collapsible-toggle" aria-expanded="false">
+            2. Visit the Cellar Dog
+          </button>
+          <div class="collapsible-content" hidden>
+            <p>
+              Formerly Fat Cat, the
+              <a href="https://www.cellardog.net/" target="_blank" rel="noopener">Cellar Dog</a> (75 Christopher St)
+              is a Brennan-endorsed gem that offers:
+            </p>
+            <ul class="styled-list">
+              <li>Live Jazz</li>
+              <li>Shuffleboard</li>
+              <li>Billiards</li>
+              <li>Ping-Pong</li>
+              <li>Arcade Games & more</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+    </section>
   </main>
 
-  <!-- Navigation toggle script -->
   <script>
     const toggle = document.querySelector('.nav-toggle');
     const navList = document.getElementById('nav-list');
@@ -100,13 +99,8 @@
         link.classList.add('active');
       }
     });
-  </script>
 
-  <!-- Light/dark mode toggle -->
-  <script src="js/theme-toggle.js" defer></script>
-
-  <!-- Collapsible <ol> functionality -->
-  <script>
+    // Collapsible <ol> functionality
     document.querySelectorAll('.collapsible-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const expanded = button.getAttribute('aria-expanded') === 'true';
@@ -117,20 +111,21 @@
     });
   </script>
 
-  <!-- Footer -->
+  <script src="js/theme-toggle.js" defer></script>
+
   <footer class="site-footer" aria-label="Site footer with social links">
     <div class="footer-icons">
       <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
-        <img src="images/icon-github.svg" alt="GitHub" />
+        <img src="images/icon-github.svg" alt="GitHub">
       </a>
       <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
-        <img src="images/icon-instagram.svg" alt="Instagram" />
+        <img src="images/icon-instagram.svg" alt="Instagram">
       </a>
       <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
-        <img src="images/icon-tiktok.svg" alt="TikTok" />
+        <img src="images/icon-tiktok.svg" alt="TikTok">
       </a>
       <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
-        <img src="images/linktree.svg" alt="Linktree" />
+        <img src="images/linktree.svg" alt="Linktree">
       </a>
     </div>
     <p class="footer-credit">&copy; Ashley Stevens</p>
