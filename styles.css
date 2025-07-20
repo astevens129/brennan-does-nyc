@@ -412,10 +412,51 @@ td a:focus {
 .validator-badges {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 10px;
+  gap: 32px;
+  padding: 20px 0;
+  background: linear-gradient(to right, #1e1e2f, #2a2a3d);
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(100, 100, 255, 0.2);
 }
+
+.validator-stamp {
+  text-align: center;
+  font-family: "Georgia", "Palatino Linotype", serif;
+  color: #e0e0ff;
+}
+
+.validator-stamp img {
+  width: 88px;
+  height: 31px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.validator-stamp img:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.8);
+}
+
+.badge-caption {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #aaaaff;
+  font-style: italic;
+}
+
+.badge-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.5px;
+}
+
 
 /* === Responsive === */
 @media (max-width: 768px) {
