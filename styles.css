@@ -412,8 +412,9 @@ td a:focus {
 .validator-badges {
   display: flex;
   justify-content: center;
-  gap: 10px;
-  margin-top: 1rem;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
 }
 
 /* === Responsive === */
