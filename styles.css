@@ -554,7 +554,7 @@ td a:focus {
   }
 } 
 
-/* Brennan Aesthetic Table Styling */
+/* === Magical Brennan Table Styling === */
 
 .responsive-table {
   width: 100%;
@@ -590,7 +590,7 @@ td a:focus {
   transition: background-color 0.3s ease;
 }
 
-/* Mobile-Responsive Leyline Layout */
+/* === Mobile Responsive Magical Table === */
 @media screen and (max-width: 768px) {
   .responsive-table {
     border: 0;
@@ -626,6 +626,5 @@ td a:focus {
     margin-bottom: 0.25rem;
   }
 }
-
 
 
