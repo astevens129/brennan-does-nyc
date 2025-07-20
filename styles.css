@@ -520,7 +520,7 @@ td a:focus {
   border-radius: 4px;
 }
 
-/* Responsive table for to eat page for mobile 
+/* Responsive table for to eat page for mobile */
 @media screen and (max-width: 768px) {
   .responsive-table {
     border: 0;
@@ -552,7 +552,7 @@ td a:focus {
     color: #555;
     margin-bottom: 4px;
   }
-} */
+} 
 
 /* Brennan Aesthetic Table Styling */
 
