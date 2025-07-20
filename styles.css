@@ -165,9 +165,8 @@ ol.styled-list:not(.collapsible-ol) li::before,
   aspect-ratio: 1 / 1;
 }
 
-.brennan-links a,
-.page-content a {
-  color: #1a285f; /* Deep, readable blue */
+.brennan-links a {
+  color: #1a285f; /* deep, accessible blue */
   font-weight: bold;
   text-decoration: underline dotted;
   text-underline-offset: 2px;
@@ -175,15 +174,14 @@ ol.styled-list:not(.collapsible-ol) li::before,
 }
 
 .brennan-links a:hover,
-.brennan-links a:focus,
-.page-content a:hover,
-.page-content a:focus {
+.brennan-links a:focus {
   color: #ffffff;
-  background-color: #5c6a9a; /* Matches your accent theme */
+  background-color: #5c6a9a; /* your accent */
   padding: 0.2rem 0.3rem;
   border-radius: 4px;
   outline: none;
 }
+
 
 
 /* === Collapsible Ordered List Styling === */
@@ -457,13 +455,13 @@ td a:focus {
 
 .badge-note {
   text-align: center;
-  font-size: 0.95rem;
-  color: #f0f0ff; /* Brighter, high-contrast soft white */
+  font-size: 0.9rem;
+  color: #1a285f; /* Changed from #bbb for accessibility */
   margin-top: 8px;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 0.5px;
-  text-shadow: 0 0 2px #1e1e2f; /* optional glow for magic vibe */
 }
+
 
 
 
