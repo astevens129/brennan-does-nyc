@@ -13,7 +13,7 @@
       <img src="images/brennan-nyc-logo.png" alt="Brennan’s Guide to NYC logo" class="site-logo">
     </a>
 
-    <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌓</button>
+    <button id="mode-toggle" aria-label="Toggle light/dark mode" aria-pressed="false">🌃</button>
 
     <nav class="site-nav" aria-label="Main navigation">
       <button class="nav-toggle" aria-controls="nav-list" aria-expanded="false">☰ Menu</button>
@@ -29,8 +29,7 @@
   </header>
 
   <main class="wrapper">
-    <h1>🗺️ To See & Do</h1>
-
+    <h1>🗸️ To See & Do</h1>
     <img src="images/brennan-to-do-img.svg" alt="Brennan Lee Mulligan holding dice over NYC with magical energy and skyline" class="page-banner">
 
     <p>“Want to walk the ley lines or find a little magic between subway stops? Before you go, make sure to check out <a href='brennan-quotes.html'>Brennan’s quotes</a> that inspired this journey.”</p>
@@ -44,7 +43,7 @@
           <button class="collapsible-toggle" aria-expanded="false">
             1. Ride the Subway
           </button>
-          <div class="collapsible-content" hidden>
+          <div class="collapsible-content table-theme" hidden>
             <p>
               Brennan insists: if you want the real NYC experience, you <em>must</em> ride the
               <a href="https://www.mta.info/fares-tolls" target="_blank" rel="noopener">subway</a> (and maybe swing by one of his <a href='old-haunts.html'>favorite old haunts</a> while you're underground)… so you can:
@@ -64,18 +63,17 @@
           <button class="collapsible-toggle" aria-expanded="false">
             2. Bethesda Fountain
           </button>
-          <div class="collapsible-content" hidden>
-            <p>Located in Central Park, this 8 foot statue/fountain combo is noted as a magical location that Brennan loves.
-            </p>
+          <div class="collapsible-content table-theme" hidden>
+            <p>Located in Central Park, this 8 foot statue/fountain combo is noted as a magical location that Brennan loves.</p>
             <blockquote>“The Angel of the Waters is maybe my favorite sculpture in the world, and Bethesda Fountain is a place with a lot of magic to me—walking the promenade with my dad and walking down the steps to the fountain is a highlight,” he says.</blockquote>
           </div>
         </li>
-        
+
         <li>
           <button class="collapsible-toggle" aria-expanded="false">
             3. Visit the Cellar Dog
           </button>
-          <div class="collapsible-content" hidden>
+          <div class="collapsible-content table-theme" hidden>
             <p>
               Formerly Fat Cat, the
               <a href="https://www.cellardog.net/" target="_blank" rel="noopener">Cellar Dog</a> (75 Christopher St)
@@ -111,7 +109,6 @@
       }
     });
 
-    // Collapsible <ol> functionality
     document.querySelectorAll('.collapsible-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const expanded = button.getAttribute('aria-expanded') === 'true';
@@ -123,44 +120,41 @@
   </script>
 
   <script src="js/theme-toggle.js" defer></script>
-<!-- Begin Footer Section-->
-<footer class="site-footer" aria-label="Site footer with social links">
-  <div class="footer-icons">
-    <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
-      <img src="images/icon-github.svg" alt="GitHub">
-    </a>
-    <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
-      <img src="images/icon-instagram.svg" alt="Instagram">
-    </a>
-    <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
-      <img src="images/icon-tiktok.svg" alt="TikTok">
-    </a>
-    <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
-      <img src="images/linktree.svg" alt="Linktree">
-    </a>
-  </div>
-
-  <p class="footer-credit">&copy; Ashley Stevens</p>
-  <p class="footer-note">Many almonds were consumed during the making of this website.</p>
-
-  <!-- Validator Badges: D20-style -->
-  <div class="validator-badges">
-    <div class="validator-stamp">
-      <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/W3C_HTML5_certified.png" alt="Valid HTML5 badge" width="88" height="31">
+  <footer class="site-footer" aria-label="Site footer with social links">
+    <div class="footer-icons">
+      <a href="https://github.com/astevens129" target="_blank" rel="noopener" aria-label="GitHub Profile">
+        <img src="images/icon-github.svg" alt="GitHub">
       </a>
-      <p class="badge-caption">Leyline-Aligned HTML</p>
-    </div>
-    <div class="validator-stamp">
-      <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener">
-        <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS badge" width="88" height="31">
+      <a href="https://www.instagram.com/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Instagram Profile">
+        <img src="images/icon-instagram.svg" alt="Instagram">
       </a>
-      <p class="badge-caption">Arcane-Stable CSS</p>
+      <a href="https://www.tiktok.com/@lo_ki_deadinside" target="_blank" rel="noopener" aria-label="TikTok Profile">
+        <img src="images/icon-tiktok.svg" alt="TikTok">
+      </a>
+      <a href="https://linktr.ee/lo_ki_deadinside" target="_blank" rel="noopener" aria-label="Linktree Profile">
+        <img src="images/linktree.svg" alt="Linktree">
+      </a>
     </div>
-  </div>
 
-  <p class="badge-note">Verified by the Bureau of Enchanted Web Standards</p>
-</footer>
+    <p class="footer-credit">&copy; Ashley Stevens</p>
+    <p class="footer-note">Many almonds were consumed during the making of this website.</p>
 
+    <div class="validator-badges">
+      <div class="validator-stamp">
+        <a href="https://validator.w3.org/check?uri=referer" target="_blank" rel="noopener">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/W3C_HTML5_certified.png" alt="Valid HTML5 badge" width="88" height="31">
+        </a>
+        <p class="badge-caption">Leyline-Aligned HTML</p>
+      </div>
+      <div class="validator-stamp">
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" target="_blank" rel="noopener">
+          <img src="https://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS badge" width="88" height="31">
+        </a>
+        <p class="badge-caption">Arcane-Stable CSS</p>
+      </div>
+    </div>
+
+    <p class="badge-note">Verified by the Bureau of Enchanted Web Standards</p>
+  </footer>
 </body>
 </html>
